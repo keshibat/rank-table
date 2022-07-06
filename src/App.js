@@ -5,6 +5,8 @@ import LiverList from './components/liver-list/liver-list.component';
 
 function App() {
   const [livers, serLivers] = useState([]);
+  
+
 
   useEffect(() => {
     fetch('https://webcdn.17app.co/campaign/pretest/data.json')

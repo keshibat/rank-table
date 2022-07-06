@@ -8,13 +8,12 @@ import {
   RTCPoints
 } from './liver.styles';
 
-const LiverRow = ({ liver }) => {
+const LiverRow = ({ liver, index }) => {
   const {displayName, picture, score} = liver;
-
   return (
     <Liver>
       <RankTableOneRow>
-        <RTCNumber>1</RTCNumber>
+        <RTCNumber>{index + 1}</RTCNumber>
         <RTCProfileImageContainer>
           <RTCProfileImage
           alt={`liver${displayName}`}

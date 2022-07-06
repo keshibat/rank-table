@@ -2,23 +2,26 @@ import styled from 'styled-components';
 
 
 export const Liver = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: space-between;
+    width: 100%;
+    height: 100%;
 `
 
 export const RankTableOneRow = styled.div`
   width: 320px;
   height: 48px;
+  top: 48px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  font-size: 16px;
+  font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft JhengHei",sans-serif;
+}
 `
 
 export const RTCNumber = styled.div`
-
+  width: 24px;
+  text-align: center;
 `
 
 export const RTCProfileImageContainer = styled.div`
@@ -41,7 +44,7 @@ export const RTCName = styled.div`
 `
 
 export const RTCPoints = styled.div`
-  -webkit-box-flex: 1;
   flex-grow: 1;
   text-align: right;
+
 `

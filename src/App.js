@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  useState, useEffect
+} from 'react';
+import LiverList from './components/liver-list/liver-list.component';
 
 function App() {
+  const [livers, serLivers] = useState([]);
+
+  useEffect(() => {
+    fetch('https://webcdn.17app.co/campaign/pretest/data.json')
+      .then((response) => response.json())
+      .then((data) => serLivers(data))
+  }, [])
+  console.log(livers);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LiverList livers={livers}/>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import {
   useState, useEffect
 } from 'react';
 import LiverList from './components/liver-list/liver-list.component';
+import { getRandomPoint, getRandomIndex } from './utils/randomNumberGenerate'
 
 function App() {
   const [livers, serLivers] = useState([]);
@@ -24,22 +25,6 @@ function App() {
     updateData[userIndex].score += addPoints
     const sortedData = updateData.sort((a,b) => b.score - a.score);
     serLivers(sortedData);
-  }
-
-  const getRandomPoint = () => {
-    const MIN = 50;
-    const MAX = 10000;
-    let randomFloat = Math.random();
-    let randomInt = Math.floor(randomFloat * (MAX - MIN)) + MIN;
-    return randomInt
-  }
-
-    const getRandomIndex = () => {
-    const MIN = 0;
-    const MAX = 10;
-    let randomFloat = Math.random();
-    let randomInt = Math.floor(randomFloat * (MAX - MIN)) + MIN;
-    return randomInt
   }
 
   return (

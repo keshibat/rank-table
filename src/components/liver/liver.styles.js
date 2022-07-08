@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Liver = styled.div`
     width: 100%;
     height: 100%;
@@ -16,7 +15,6 @@ export const RankTableOneRow = styled.div`
   justify-content: space-around;
   font-size: 16px;
   font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft JhengHei",sans-serif;
-}
 `
 
 export const RTCNumber = styled.div`

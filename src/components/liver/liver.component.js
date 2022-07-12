@@ -10,6 +10,7 @@ import {
 
 const LiverRow = ({ liver, index }) => {
   const {displayName, picture, score} = liver;
+
   return (
     <Liver>
       <RankTableOneRow>
@@ -21,7 +22,7 @@ const LiverRow = ({ liver, index }) => {
           />
         </RTCProfileImageContainer>
         <RTCName>{displayName}</RTCName>
-        <RTCPoints>{`${score} pt`}</RTCPoints>
+        <RTCPoints key={score}>{`${score} pt`}</RTCPoints>
       </RankTableOneRow>
     </Liver>
   )

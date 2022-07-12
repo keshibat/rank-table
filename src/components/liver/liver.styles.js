@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Liver = styled.div`
     width: 100%;
@@ -41,8 +41,45 @@ export const RTCName = styled.div`
 
 `
 
+const countup = keyframes`
+  25% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1.0);
+  }
+
+`;
+
+const countupAnimation = css`
+  animation: ${countup} 1s ease;
+  /* animation: ${countup} 5s linear infinite alternate; */
+`;
+
+
 export const RTCPoints = styled.div`
   flex-grow: 1;
   text-align: right;
-
+  ${countupAnimation}
+  counter-reset: count 0;
 `
+
+// const countup = css`
+//   syntax: '<integer>';
+//   initial-value: 0;
+//   inherits: false;
+// `;
+
+// const countupAnimation = css`
+//   animation: ${countup} 1s ease;
+//   /* animation: ${countup} 5s linear infinite alternate; */
+// `;
+
+
+// export const RTCPoints = styled.div`
+//   flex-grow: 1;
+//   text-align: right;
+//   ${countupAnimation}
+//   counter-reset: count 0;
+// `

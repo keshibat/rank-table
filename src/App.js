@@ -1,5 +1,5 @@
 import {
-  useState, useEffect, Fragment, createRef
+  useState, useEffect, Fragment,
 } from 'react';
 import LiverList from './components/liver-list/liver-list.component';
 import { getRandomPoint, getRandomIndex } from './utils/randomNumberGenerate'

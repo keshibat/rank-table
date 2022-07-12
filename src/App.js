@@ -1,5 +1,5 @@
 import {
-  useState, useEffect
+  useState, useEffect, Fragment
 } from 'react';
 import LiverList from './components/liver-list/liver-list.component';
 import { getRandomPoint, getRandomIndex } from './utils/randomNumberGenerate'
@@ -28,9 +28,13 @@ function App() {
   }
 
   return (
-    <div>
-      <LiverList livers={livers}/>
-    </div>
+    <Fragment>
+      {livers.length ? (
+        <LiverList livers={livers}/>
+      ) : (
+        <div>There is no products</div>
+      )}
+    </Fragment>
   );
 }
 

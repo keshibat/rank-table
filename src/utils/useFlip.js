@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react';
 
-export const useFlip = (listRef) => {
+export const useFlip = (liverRef) => {
   const origins = useRef({});
   let firstRun = useRef(true);
   const [y, setY] = useState(window.scrollY);
@@ -16,8 +16,8 @@ export const useFlip = (listRef) => {
       const window = e.currentTarget;
       if (window && window instanceof Window) {
         if (y !== window.scrollY) {
-          if (listRef.current === null) return;
-          const list = listRef.current;
+          if (liverRef.current === null) return;
+          const list = liverRef.current;
           const children = [].slice.call(list.children);
 
           for (const child of children) {
@@ -28,7 +28,7 @@ export const useFlip = (listRef) => {
         setY(window.scrollY);
       }
     },
-    [y, listRef],
+    [y, liverRef],
   );
 
   useEffect(() => {
@@ -42,8 +42,8 @@ export const useFlip = (listRef) => {
 
   // React FLIP (First Last Invert Play)
   useLayoutEffect(() => {
-    if (listRef.current === null) return;
-    const list = listRef.current;
+    if (liverRef.current === null) return;
+    const list = liverRef.current;
     const children = [].slice.call(list.children);
 
     for (const child of children) {
@@ -66,7 +66,7 @@ export const useFlip = (listRef) => {
     }
 
     firstRun.current = false;
-  }, [listRef]);
+  }, [liverRef]);
 };
 
 const invert = (delta, elem) => {
